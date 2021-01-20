@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泰山渡假飯店‧最貼近山林的暢意選擇</title>
+
+    <link rel="stylesheet" href="plugin/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">      <!--自定義放在bootstrap之後，優先權較高-->
+
+    <script src="plugin/jquery-3.5.1.min.js"></script>
+    <script src="plugin/bootstrap.bundle.min.js"></script>
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/87c0ff4c0f.js" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+
+    <!--選單區-->  <!--為了語意，所以這裡加header，代表是整個網站的表頭)-->
+    <header class="fixed-top" style="background-color: rgb(10, 130, 146);">  <!--fixed-top：讓bar一直置頂-->
+    <nav class="navbar navbar-expand-lg navbar-dark container">
+        <!--讓header放主色塊，NAV去除窄邊(下CONTANINER)-->
+        <a class="navbar-brand" href="#">泰山渡假飯店</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#taishanmenu" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="taishanmenu">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">  <!--ml-auto修改-->
+            <li class="nav-item active">
+              <a class="nav-link" href="#taishanroom"><i class="fas fa-bed"></i>房型介紹</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#taishanfacilities"><i class="fas fa-concierge-bell"></i>服務設施</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#taishanmeal"><i class="fas fa-utensils"></i>餐飲美食</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#taishantr"><i class="fas fa-map-signs"></i>交通資訊</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#taishancot"><i class="fas fa-users"></i>聯絡我們</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+
+    <!--輪播carousel-->   <!--要開始設計RWD，尺寸要由小做到大，要先規劃-->
+    <section id="taishanfirst" class="carousel slide" data-ride="carousel">    <!--當網站開始龐大時，建議div進行語意化，這裡改成section-->
+        <ol class="carousel-indicators">
+          <li data-target="#taishanfirst" data-slide-to="0" class="active"></li>
+          <li data-target="#taishanfirst" data-slide-to="1"></li>
+          <li data-target="#taishanfirst" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item vh-100 active">
+            <img src="https://picsum.photos/1920/1080/?random=1" class="h-100 w-100" >
+            <div class="carousel-caption d-flex flex-column justify-content-center">
+                <!--在容器下，使用d-flex跳出，再使用flex-column調換排序為垂直，最後再用justify-content-center進行文字置中-->
+              <h1>First slide label</h1>
+              <p class="d-none d-md-block">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>  <!--d-none：一開始不出現 d-md-block：到MD尺寸之後開始出現-->
+            </div>
+          </div>
+          <div class="carousel-item vh-100">
+            <img src="https://picsum.photos/1920/1080/?random=2" class="h-100 w-100" >
+            <div class="carousel-caption d-flex flex-column justify-content-center">
+              <h1>Second slide label</h1>
+              <p class="d-none d-md-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+          <div class="carousel-item vh-100">
+            <img src="https://picsum.photos/1920/1080/?random=3" class="h-100 w-100" >
+            <div class="carousel-caption d-flex flex-column justify-content-center">
+              <h1>Third slide label</h1>
+              <p class="d-none d-md-block ">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#taishanfirst" data-slide="prev">
+            <i class="far fa-arrow-alt-circle-left fa-2x"></i>
+
+        </a>
+        <a class="carousel-control-next" href="#taishanfirst" data-slide="next">
+            <i class="far fa-arrow-alt-circle-right fa-2x"></i>
+        </a>
+    </section>
+    
+    
+    <!-- 房型介紹 -->   <!--header/section/nav/article都是語意標籤-->
+    <section id="taishanroom" class="container py-5">
+        <header class="text-center" >
+            <h2 class="text-info py-3">房型介紹</h2>
+            <nav class="nav nav-tabs justify-content-around">
+                <a class="nav-link alert-info text-muted active" data-toggle="tab" href="#roomA">行政套房</a>
+                <a class="nav-link alert-info text-muted" data-toggle="tab" href="#roomB">豪華三人房</a>
+                <a class="nav-link alert-info text-muted" data-toggle="tab" href="#roomC">尊爵套房</a>
+                <a class="nav-link alert-info text-muted" data-toggle="tab" href="#roomPrice">價目表</a>
+                <a class="nav-link alert-info text-muted" data-toggle="tab" href="#roomRule">訂房需知</a>
+            </nav>
+        </header>
+
+
+        <article class="tab-content">
+                <!--房型A--> <!--grid system: row -> col 主要用來幫助排版用-->
+                <div class="row tab-pane fade show active" id="roomA">    
+                    <p class="col-12 text-muted text-center py-5">台北晶華酒店座落在富有活力與文化、娛樂與購物的中心區域，是來台商務及休閒旅客的住宿上選。從寬敞奢華的住宿享受、先進高端的會議場地，到精緻非凡的用餐體驗及客製化的娛樂設施，我們獨幟一格的軟硬體設備將能滿足並超越顧客們的期待。</p>
+                        <div class="col-12 col-md-6 col-lg-4 mb-5">       
+                            <div class="card">      <!--card會自動將圖片調整成適合card的尺寸-->
+                            <img src="https://fakeimg.pl/300x200/" class="card-img-top" >
+                                <div class="card-body">
+                                <h5 class="card-title">行政本館</h5>
+                                <p class="card-text">溫馨雙人房<small class="text-muted float-right">1大床-6.5坪</small>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-5">       
+                            <div class="card">      <!--card會自動將圖片調整成適合card的尺寸-->
+                            <img src="https://fakeimg.pl/300x200/" class="card-img-top" >
+                                <div class="card-body">
+                                <h5 class="card-title">行政本館</h5>
+                                <p class="card-text">溫馨雙人房<small class="text-muted float-right">1大床-6.5坪</small>
+                                </p>
+                                </div>
+                            </div>
+                            </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-5">       
+                            <div class="card">      <!--card會自動將圖片調整成適合card的尺寸-->
+                            <img src="https://fakeimg.pl/300x200/" class="card-img-top" >
+                                <div class="card-body">
+                                    <h5 class="card-title">行政本館</h5>
+                                    <p class="card-text">溫馨雙人房<small class="text-muted float-right">1大床-6.5坪</small></p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <!--房型B-->
+                <div class="row tab-pane fade" id="roomB">
+                    <p class="col-12 text-muted text-center py-5">台北晶華酒店座落在富有活力與文化、娛樂與購物的中心區域，是來台商務及休閒旅客的住宿上選。從寬敞奢華的住宿享受、先進高端的會議場地，到精緻非凡的用餐體驗及客製化的娛樂設施，我們獨幟一格的軟硬體設備將能滿足並超越顧客們的期待。</p>
+                    <div class="col-12 col-md-6 col-lg-4 mb-5">       
+                        <div class="card">      <!--card會自動將圖片調整成適合card的尺寸-->
+                        <img src="https://fakeimg.pl/300x200/282828/eeeeee/?text=TaishanHotel" class="card-img-top" >
+                            <div class="card-body alert-warning">
+                            <h5 class="card-title">行政本館</h5>
+                            <p class="card-text">溫馨雙人房<small class="text-muted float-right">1大床-6.5坪</small></p>
+                            
+                            </div>
+                        </div>
+                        </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-5">       
+                        <div class="card">      <!--card會自動將圖片調整成適合card的尺寸-->
+                        <img src="https://fakeimg.pl/300x200/282828/eeeeee/?text=TaishanHotel" class="card-img-top" >
+                            <div class="card-body alert-warning">
+                            <h5 class="card-title">行政本館</h5>
+                            <p class="card-text">溫馨雙人房<small class="text-muted float-right">1大床-6.5坪</small></p>
+                            </div>
+                        </div>
+                        </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-5">       
+                        <div class="card">      <!--card會自動將圖片調整成適合card的尺寸-->
+                        <img src="https://fakeimg.pl/300x200/282828/eeeeee/?text=TaishanHotel" class="card-img-top" >
+                            <div class="card-body alert-warning">
+                                <h5 class="card-title">行政本館</h5>
+                                <p class="card-text">溫馨雙人房<small class="text-muted float-right">1大床-6.5坪</small></p>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+
+                <!--房型C-->
+                <div class="row tab-pane fade" id="roomC">
+                 <p class="col-12 text-muted text-center py-5">台北晶華酒店座落在富有活力與文化、娛樂與購物的中心區域，是來台商務及休閒旅客的住宿上選。從寬敞奢華的住宿享受、先進高端的會議場地，到精緻非凡的用餐體驗及客製化的娛樂設施，我們獨幟一格的軟硬體設備將能滿足並超越顧客們的期待。</p>
+                        <div class="col-12 col-md-6 col-lg-4 mb-5">       
+                            <div class="card">      <!--card會自動將圖片調整成適合card的尺寸-->
+                            <img src="https://fakeimg.pl/300x200/fd7e14/eeeeee/?text=Expensive" class="card-img-top" >
+                                <div class="card-body">
+                                <h5 class="card-title">行政本館</h5>
+                                <p class="card-text">溫馨雙人房<small class="text-muted float-right">1大床-6.5坪</small></p>
+                                
+                                </div>
+                              </div>
+                            </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-5">       
+                            <div class="card">      <!--card會自動將圖片調整成適合card的尺寸-->
+                            <img src="https://fakeimg.pl/300x200/fd7e14/eeeeee/?text=Expensive" class="card-img-top" >
+                                <div class="card-body">
+                                <h5 class="card-title">行政本館</h5>
+                                <p class="card-text">溫馨雙人房<small class="text-muted float-right">1大床-6.5坪</small></p>
+                                </div>
+                              </div>
+                            </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-5">       
+                            <div class="card">      <!--card會自動將圖片調整成適合card的尺寸-->
+                            <img src="https://fakeimg.pl/300x200/fd7e14/eeeeee/?text=Expensive" class="card-img-top" >
+                                <div class="card-body">
+                                    <h5 class="card-title">行政本館</h5>
+                                    <p class="card-text">溫馨雙人房<small class="text-muted float-right">1大床-6.5坪</small></p>
+                                </div>
+                              </div>
+                </div>    
+                </div>
+
+                <!--價目表-->
+                <div class="tab-pane fade" id="roomPrice">  <!--使用bootstrap table-->
+                    <div class="mb-5">
+                        <div class="text-info ">【行政本館】
+                            <table class="table table-sm text-center">
+                                <thead>
+                                    <tr class="alert-info">
+                                    <th class="border-info">房型</th>
+                                    <th class="border-info">平日</th>
+                                    <th class="border-info">假日</th>
+                                    <th class="border-info">連續國定假日</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <th>溫馨雙人房</th>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                    </tr>
+                                    <tr>
+                                    <th>精緻雙人房</th>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                    </tr>
+                                    <tr>
+                                    <th>親子四人房</th>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <div class="text-info ">【行政本館】
+                            <table class="table table-sm text-center">
+                                <thead>
+                                  <tr class="alert-info">
+                                    <th class="border-info">房型</th>
+                                    <th class="border-info">平日</th>
+                                    <th class="border-info">假日</th>
+                                    <th class="border-info">連續國定假日</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <th>溫馨雙人房</th>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                  </tr>
+                                  <tr>
+                                    <th>精緻雙人房</th>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                  </tr>
+                                  <tr>
+                                    <th>親子四人房</th>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <div class="text-info ">【行政本館】
+                            <table class="table table-sm text-center">
+                                <thead>
+                                  <tr class="alert-info">
+                                    <th class="border-info">房型</th>
+                                    <th class="border-info">平日</th>
+                                    <th class="border-info">假日</th>
+                                    <th class="border-info">連續國定假日</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <th>溫馨雙人房</th>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                  </tr>
+                                  <tr>
+                                    <th>精緻雙人房</th>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                  </tr>
+                                  <tr>
+                                    <th>親子四人房</th>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                    <td>NT3000</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+
+                <!--住宿規則-->
+                <div class="tab-pane fade py-5" id="roomRule">
+                    <h3 class="text-right border-bottom border-info">入住須知</h3>
+
+
+                        <h5 class="text-info">[ 寵物友善 ]</h5>
+                        <p class="mb-5">
+                        毛小孩友善飯店，歡迎毛小孩同行(需提前告知以利安排,全館只有一間)。
+                        </p>
+                        <h5 class="text-info">[ 飯店設備 ]</h5>
+                        <p class="mb-5">
+                        客房無線網路、有線第四台、自助洗衣機、免費烘乾機、免費停車場
+                        </p>
+                        <h5 class="text-info">[ 入住須知 ]</h5>
+                        <p class="mb-5">
+                        進房時間（Check In )時間為15:00以後；退房時間（Check
+                        Out）時間為11:00以前。<br>
+                        住宿時請攜帶本人身分證正本、駕照以利核對。<br>
+                        一般住宿附贈早餐、SPA券（依住宿房型開立），特殊專案依專案條件辦理。<br>
+                        超過退房時間一個小時將以一個小時200元計費，超過半個小時將以一個小時計算。<br>
+                        請注意住宿人數勿超過客房設定之人數，若有超過客房設定人數，飯店有權拒絕入住。
+                        </p>
+                        <h5 class="text-info">[ 平假日定義 ]</h5>
+                        <p class="mb-5">
+                        平日時間：星期日~星期五；假日時間：星期六、連續假日結束前一日，依飯店公告為準。
+                        </p>
+                        <h5 class="text-info">[ 加人服務 ]</h5>
+                        <p class="mb-5">
+                        本飯店繪圖湯屋房型提供加人服務（含軟墊、備品、早餐、溫泉SPA券），<br>
+                        每加一人NT$600（春節期間不適用）。
+                        </p>
+                        <h5 class="text-info">[ 其他注意事項 ]</h5>
+                        <p class="mb-5">
+                        為維護公共及個人安全，禁止在房間內烹煮食物，或攜帶瓦斯、電磁爐等同性質用具，敬請房客務必配合。<br>
+                        客房地面為木質地板，請勿擅自移動房內傢俱，如發現自行搬動客房家具造成木質地面損傷，需付損毁費用。<br>
+                        房型擺設僅供參考，以實體房間為主。<br>
+                        免費停車場（僅供免費停車，不負保管之責）。<br>
+                        行政本館及雙幕川館內衛浴設備皆為一般熱水，如需使用溫泉需至戶外大眾池或改訂繪圖湯屋房型。
+                        </p>
+
+                        <h3 class="text-right border-bottom border-info">官網訂房規範</h3>
+                        <p class="mb-5 small text-muted text-right">- 僅適用官網訂房，專案如有特殊需求，依專案為主</p>
+
+                        <h5 class="text-info">[ 線上訂房須知 ]</h5>
+                        <p class="mb-5">
+                        線上訂房交易價格均已含營業稅及服務費，若您選擇線上刷卡，交易成功後將由您的信用卡帳戶直接扣款。<br>
+                        線上訂房不接受國民旅遊卡刷卡訂房，若需使用國民旅遊卡訂房請直接電洽櫃台辦理。
+                        </p>
+
+                        <h5 class="text-info">[ 延遲入住手續 ]</h5>
+                        <p class="mb-5">
+                        若您在住宿當日，因塞車或其他的因素有所耽擱，無法在當日下午六點以前辦理住房手續，請您先以電話聯繫，否則飯店將視為您當日取消訂房，恕不退費。
+                        </p>
+
+                        <h5 class="text-info">[ 更改入住日期 ]</h5>
+                        <p class="mb-5">
+                        訂房後如欲更改訂房日期，請電話聯絡協助處理。<br>
+                        同一筆訂單限更改一次，且更改後的訂單恕不接受退房，否則視同取消訂房，依取消訂房規範處理。<br>
+                        如更改後訂單金額大於原訂單金額，旅客需現場另行支付差額；如更改後金額小於原訂單金額，恕不退還差額。
+                        </p>
+
+                        <h5 class="text-info">[ 取消訂房 ]</h5>
+                        <p class="mb-5">
+                        取消訂房將依以下規範酌收定金，請特別注意：<br>
+                        住宿日 當日 取消訂房，扣定金總金額100%<br>
+                        住宿日 1 天前（不含當日）取消訂房，扣定金總金額80%<br>
+                        住宿日 2~3 天前（不含當日）取消訂房，扣定金總金額70%<br>
+                        住宿日 4~6 天前（不含當日）取消訂房，扣定金總金額60%<br>
+                        住宿日 7~9 天前（不含當日）取消訂房，扣定金總金額50%<br>
+                        住宿日 10~13 天前（不含當日）取消訂房，扣定金總金額30%<br>
+                        住宿日 14
+                        天前（不含當日）取消訂房，扣除匯款手續費後，剩餘定金退還。<br>
+                        線上訂房若有需求取消，請直接與我們「電話」聯繫進行取消訂房。<br>
+                        若您使用信用卡付款，我們將由系統進行刷退動作；若您使用臨櫃匯款或ATM轉帳，請您傳真訂房者之任一銀行存摺封面至089-515026。
+                        </p>
+
+                        <h5 class="text-info">[ 特殊因素之退房處理 ]</h5>
+                        <p class="mb-5">
+                        若因天然災害等不可抗拒之因素（如地震、颱風等，以飯店所在地縣市政府公告為準）無法如期前往住宿<br>
+                        請於原訂住宿日３日（含當日）內與飯店之訂房中心連絡改期（得保留6個月）或是辦理退費。
+                        </p>
+                </div>
+        </article>
+    </section>
+
+
+    <!--服務設施-->
+    <section id="taishanfacilities" class=" py-5 text-white">  <!--container會有窄版效果-->
+        <header class="text-center container px-0" > <!--px-0，為了跟上方的房型介紹卡片對齊-->
+            <h2 class="text-info py-3">服務設施</h2>
+        </header>
+
+        <article class="container px-0">
+            <ul class="list-unstyled row">
+                <li class="media flex-column align-items-center flex-sm-row col-lg-6 mb-4 align-items-sm-start ">    <!--media 本身就是flexbox-->
+                  <img src="https://fakeimg.pl/300x300/312423/eeeeee/?text=FACILITY" class="pb-3 col-sm-6" >
+                  <div class="media-body">
+                    <h5 class="mt-0 mb-1">List-based media object</h5>
+                    <p class="pb-3 border-bottom border-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque perferendis, vero cumque porro exercitationem veritatis.</p>
+
+                  </div>
+                </li>
+                <li class="media flex-column align-items-center flex-sm-row col-lg-6 mb-4 align-items-sm-start">  
+                    <!--align-items-sm-start：文字朝上對齊-->
+                        <!--在"偶數"增加了order-lg-1，在lg的情況會往右邊排-->
+                  <img src="https://fakeimg.pl/300x300/312423/eeeeee/?text=FACILITY" class="pb-3 col-sm-6 order-lg-1" >
+                  <div class="media-body">
+                    <h5 class="mt-0 mb-1">List-based media object</h5>
+                    <p class="pb-3 border-bottom border-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque perferendis, vero cumque porro exercitationem veritatis.</p>
+                  </div>
+                </li>
+                <li class="media flex-column align-items-center flex-sm-row col-lg-6 mb-4 align-items-sm-start">
+                  <img src="https://fakeimg.pl/300x300/312423/eeeeee/?text=FACILITY" class="pb-3 col-sm-6" >
+                  <div class="media-body">
+                    <h5 class="mt-0 mb-1">List-based media object</h5>
+                    <p class="pb-3 border-bottom border-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque perferendis, vero cumque porro exercitationem veritatis.</p>
+                  </div>
+                </li>
+                <li class="media flex-column align-items-center flex-sm-row col-lg-6 mb-4 align-items-sm-start">
+                  <img src="https://fakeimg.pl/300x300/312423/eeeeee/?text=FACILITY" class="pb-3 col-sm-6 order-lg-1" >
+                  <div class="media-body my-4">
+                    <h5 class="mt-0 mb-1">List-based media object</h5>
+                    <p class="pb-3 border-bottom border-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque perferendis, vero cumque porro exercitationem veritatis.</p>
+                  </div>
+                </li>
+                <li class="media flex-column align-items-center flex-sm-row col-lg-6 mb-4 align-items-sm-start">    <!--media 本身就是flexbox-->
+                    <img src="https://fakeimg.pl/300x300/312423/eeeeee/?text=FACILITY" class="pb-3 col-sm-6" >
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-1">List-based media object</h5>
+                      <p class="pb-3 border-bottom border-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque perferendis, vero cumque porro exercitationem veritatis.</p>
+  
+                    </div>
+                  </li>
+                  <li class="media flex-column align-items-center flex-sm-row col-lg-6 mb-4 align-items-sm-start">  
+                          <!--在"偶數"增加了order-lg-1，在lg的情況會往右邊排-->
+                    <img src="https://fakeimg.pl/300x300/312423/eeeeee/?text=FACILITY" class="pb-3 col-sm-6 order-lg-1" >
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-1">List-based media object</h5>
+                      <p class="pb-3 border-bottom border-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque perferendis, vero cumque porro exercitationem veritatis.</p>
+                    </div>
+                  </li>
+              </ul>
+
+        </article>
+
+
+
+    </section>
+
+
+    <!--餐飲美食-->
+    <section id="taishanmeal" class="container py-5">
+          <header class="text-center" >
+            <h2 class="text-info py-3">餐飲美食</h2>
+        </header>
+        <article class="py-5 row">
+          <!-- tab-content -->
+          <div class="col-12 col-lg-6 tab-content mb-3">
+
+            <img src="https://images.unsplash.com/photo-1538333581680-29dd4752ddf2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" id="meal_01" class="w-100 image-fluid tab-pane fade show active"> 
+            <img src="https://images.unsplash.com/photo-1571162478581-ad3d0c1057ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" id="meal_02" class="w-100 image-fluid tab-pane fade ">
+            <img src="https://images.unsplash.com/photo-1581978392696-ce25141c7aa9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" id="meal_03" class="w-100 image-fluid tab-pane fade ">
+          </div>
+
+            <!-- Accordion -->
+          <div class="col-12 col-lg-6 accordion list-group px-3" id="foodmeal">
+            <div class="card " data-toggle="list" data-target="#meal_01">
+              <a href="#foodmeal1"  class="card-header text-decoration-none alert-info" data-toggle="collapse" >傳統與美味的呈現
+
+                <small class="text-muted float-right">6樓 雅意</small>
+              </a>
+          
+              <div id="foodmeal1" class="collapse show" data-parent="#foodmeal">
+                <div class="card-body">
+                  <p>源自希臘文ἀμβροσία，象徵藝術與仙饈美饌的結合、精神與物質享受的連結。透過經典的義大利傳統美饌帶給每一位賓客歷史、人文、美饌、超凡脫俗的體驗，提供精湛道地的正宗義式料理饗宴及頂級用餐服務，締造賓客與料理之間的感動。</p>
+                  <P class="text-danger float-right">
+                    訂位須知：<br>
+                    1.Casual smart穿著，用餐請著半正式服裝，<br>
+                    2.本餐廳僅提供12歲(含)以上貴賓入場。
+                   </P>
+                </div>
+              </div>
+            </div>
+            <div class="card" data-toggle="list" data-target="#meal_02">
+              <a href="#foodmeal2" class="card-header text-decoration-none alert-info" data-toggle="collapse">多彩斑斕的美食盛宴
+                <small class="text-muted float-right">6樓 雲軒</small>
+              </a>
+              <div id="foodmeal2" class="collapse" data-parent="#foodmeal">
+                <div class="card-body">
+                  <p>
+                頂級法式燒烤餐廳，以開放式廚房展演精彩料理手法，賓客可以徜徉在雲軒的頂級海鮮與碳烤牛排中度過最美好的饗宴時光，窖藏精選葡萄酒更可為您助興。每日並供應自助式早餐，以及半自助式燒烤午晚餐。
+                 </p>
+                 <P class="text-danger float-right">
+                  訂位及詳情<br>
+                  請洽：+886-978-865797
+                 </P>
+            
+            </div>
+              </div>
+            </div>
+            <div class="card" data-toggle="list" data-target="#meal_03">
+              <a href="#foodmeal3" class="card-header text-decoration-none alert-info" data-toggle="collapse">米其林級頂級享受
+                <small class="text-muted float-right">7樓 頤宮</small>
+              </a>
+              <div id="foodmeal3" class="collapse" data-parent="#foodmeal">
+                <div class="card-body">
+                  <p> ▲蟬聯三屆《台北米其林指南》三星餐廳(2018-2020)▲<br>
+                  嚴選各種當令食材，供應中華各菜系料理；精巧飲茶點心或經典筵席名菜，廣獲國內外好評，獲選兩岸美食論壇十大名店殊榮。餐廳共設有6間中法美學融合的私密貴賓包廂，日享通透溫暖天光，夜擁壯麗燈火美景是私人聚會的絕佳場所。</p> 
+                  <P class="text-danger float-right">
+                    訂位及詳情<br>
+                    請洽：+886-978-865797
+                   </P>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </article>
+
+
+
+    </section>
+
+
+    <!--交通資訊-->
+    <section id="taishantr" class="embed-responsive py-5">
+      <iframe class="embed-responsive-item" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.755396156467!2d121.42217016776891!3d25.0423737927078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bec9ad74b1%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2stw!4v1606440611306!5m2!1szh-TW!2stw"></iframe>
+      
+      <article class="container py-5">  <!--扮演container的角色，因為section改用去呈現滿版的地圖-->
+      <div class="row">
+        <header class=" col-12 col-lg-6 text-center ">
+          <h2 class="card text-info py-3 mb-5">交通資訊</h2></header>  <!--也可以在這裡加一塊div.col讓這裡在COL-LG-6的時候可以呈現上下排列-->
+        <div class="col-12"></div>
+          <div class="col-12 col-lg-6">
+            <div class="card p-3">
+              <div class="coarbody">
+                <strong >停車資訊</strong>
+                <ul class="pl-4">
+                  <li>君品酒店大門位於承德路上。停車場入口位於市民大道上，專屬停車場位置在台北轉運站B4~B5。(限高兩公尺)。請沿市民大道向承德路方向前進約350公尺，即可由右側台北轉運站停車場入口進入君品酒店專屬停車場。請由捷運台北車站Y5出口右轉承德路即可。請由西出口一樓出站，經西側廣場經由天橋穿越市民大道即可。</li>
+                </ul>
+                <strong>大眾交通方式</strong>
+                <ul class="pl-4">
+                  <li>捷運：請由捷運台北車站Y5出口右轉承德路即可</li>
+                  <li>高鐵：請由西出口一樓出站，經西側廣場經由天橋穿越市民大道即可。</li>
+                  <li>台鐵：由台北地下街Y4入口接Y3出口(需時約5分鐘)，走出京站廣場往承德路方向即可。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+      </article>
+    </section>
+
+    <!--連絡我們-->
+    <section id="taishancot" class="bg-dark py-5">
+      <header class="container text-center">
+        <h2 class="text-info pb-3">連絡我們</h2>
+      </header>
+      <article class="container py5 text-white">
+        <form class="row py-2">
+          <div class="form-group col-12 col-md-6">
+            <label for="cid_name">訪客姓名：</label>
+            <div class="input-group mb-3">
+            <input type="text" class="form-control" id="cid_name" placeholder="full name" name="formname" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <div class="form-check form-check-inline custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="inlineRadioOptions" id="male_0" value="boy">
+                  <label class="custom-control-label" for="male_0">Male</label>
+                </div>
+                <div class="form-check form-check-inline custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="inlineRadioOptions" id="female_0" value="gitl">
+                  <label class="custom-control-label" for="female_0">Female</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="form-group col-12 col-md-6">
+            <label for="cus_tel">訪客電話：</label>
+            <div class="input-group mb-3">
+            <input type="tel" class="form-control" id="cus_tel" placeholder="Mobile" name="formtel" required>
+          </div>
+        </div>
+        <div class="form-group col-12 col-md-6">
+          <label for="cus_mail">電子信箱：</label>
+          <div class="input-group mb-3">
+          <input type="email" class="form-control" id="cus_mail" placeholder="E-mail" name="formmail" required>
+        </div>
+      </div>
+
+        <div class="form-group col-12 col-md-6">
+          <label for="cus_que">問題類型：</label>
+          <div class="input-group mb-3">
+            <select class="custom-select" id="cus_que" name="cus_quetype">
+              <option selected>請選擇您的問題類型</option>
+              <option value="雲軒相關">雲軒相關</option>
+              <option value="雅意相關">雅意相關</option>
+              <option value="頤宮相關">頤宮相關</option>
+            </select>
+        </div>
+      </div>
+
+
+      <div class="was-validated form-group col-12">
+          <label for="cus_commt">意見留言：</label>
+          <textarea class="form-control mb-3" id="cus_commt" placeholder="Your comment" rows="10" name="cus_commte" required>
+          </textarea>
+        </div>
+        
+        <div class="form-group col-12 text-center">
+          <small class="text-secondary p-2 ">請如實填寫便於信件回覆，我們保證不隨意公開您的留言資訊</small>
+          <hr class="border-secondary">
+          <button class="btn btn-light text-primary" type="submit" name="確認送出">確認送出</button>
+        </div>
+        </form>
+      </article>
+    </section>
+    <section id="taishanad" class="bg-secondary containder text-center py-5">
+      <div class="d-flex justify-content-center align-items-center flex-wrap">
+      <a href="http://" target="_blank" class="border p-4 m-3 text-light"><i class="fab fa-facebook fa-2x mb-2"></i><br>泰山職訓中心</a>
+      <a href="https://tkyhkm.wda.gov.tw/" target="_blank"><img src="/images/222.PNG" alt="勞動力發展署北基宜花金馬分署全球資訊網"></a>
+      <a href="https://www.taiwanjobs.gov.tw/home109/index.aspx" target="_blank"><img src="/images/intro-logo (1).png" alt="台灣就業通"></a>
+            </div>
+            <span class="font-weight-bold text-light">
+            電話：<a href="tel:0229018274">02-29018274</a>
+            　｜　
+            傳真：02-2908-4773
+            　｜　
+            信箱：123456456456@fjs.gov.tw
+          </span>
+        
+            <address class="font-weight-bold text-light">
+            24302新北市泰山區貴子里致遠新村55之1號
+          </address>
+
+    </section>
+
+
+
+      <!-- 頁尾區 -->
+      <footer class="bg-dark text-center text-muted py-2">
+        <small>泰山職訓中心課程教材練習 <br>  copyright &copy; <span class="text-warning">江佰瑾設計</span> ALL right reserved</small>
+        <a href="#taishanfirst" class="btn btn-info position-fixed">
+            <!-- 先將這個圖示按鈕化 -->
+            <i class="fas fa-sort-amount-up fa-2x"></i>
+        </a>
+
+
+      </footer>
+
+
+</body>
+</html>

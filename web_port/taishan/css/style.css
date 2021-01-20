@@ -1,0 +1,124 @@
+body{
+    font-family: 'Open Sans','Noto Sans TC',Arial, Helvetica, sans-serif;
+    background-color: #fafafc;
+}
+
+
+#taishanfirst img{
+    object-fit: cover;       /* 固定圖片比例，視窗拉來拉去圖片不會變形 */
+    filter: grayscale(45%);  /* CSS濾鏡：grayscale 色度降低 */
+
+
+}
+
+#taishanfirst .carousel-caption{
+
+    top:0;
+    bottom: 0;
+    text-shadow: 3px 1px 12px black;   /*建議可以統一調整單位為rem，因為bootstrap也是以rem為單位*/
+}
+
+#taishanfirst .carousel-indicators li{
+
+    width: 15px;
+    height: 15px;
+    background-color: rgb(160, 202, 160);
+    border: 10px solid transparent;
+    border-radius: 50%;
+
+
+}
+
+/*頁尾資訊區*/
+
+footer a.position-fixed{  /*讓符標跳到固定位置*/
+bottom: 5vh ;      /*兩個設定單位要一致*/
+right: 5vh;
+animation: bounce 2s ease infinite;
+
+}
+
+@keyframes bounce{
+
+    0%,20%, 53%, 80%,100% {
+        animation-timing-function:cubic-bezier(0.755,0.05,0.855,0.06);
+        transform:translate(0,-30px);
+    }
+    40%, 43%{
+        animation-timing-function:cubic-bezier(0.755,0.05,0.855,0.06);
+        transform:translate(0,-30px);
+    }
+
+    70%{
+        animation-timing-function:cubic-bezier(0.755,0.05,0.855,0.06);
+        transform:translate(0,-15px);
+    }
+
+    90%{
+        transform:translate(0,-4px);
+    }
+}
+
+
+/*房間介紹*/
+#taishanroom .nav-tabs .nav-link{  /*調整頁籤大小*/
+
+    flex:0 1 15%;  /*RWD，不膨脹，可收縮，比例12%*/
+    box-shadow: 3px -1px 5px 1px #cad3cf;
+    border:0;
+    border-bottom:1px solid transparent;
+}
+
+#taishanroom .nav-link.active{
+    background-color: #43ccd6 !important;
+    color: rgb(248, 245, 245) !important;
+    border-bottom:1px solid #43ccd6;
+    
+}
+
+
+#taishanroom nav.nav-tabs{  /*調整頁籤大小*/
+
+    border-bottom:1px solid  #43ccd6;
+
+}
+
+#taishanroom  .tab-content .row.active{  /*因為會有*/
+
+    display:flex;
+
+}
+
+
+
+/*服務設施*/
+#taishanfacilities{
+background-image: url("https://picsum.photos/1920/1080/?random=1"), linear-gradient(90deg, rgba(254,235,197,1) 0%, rgba(180,231,138,1) 35%, rgba(55,218,219,1) 80%, rgba(0,212,255,1) 100%);
+background-blend-mode: multiply;
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+text-shadow: 0.3rem 0.3rem 0.4rem #ccc;
+
+}
+
+
+/* 取代order-lg-1的寫法
+@media(min-width:992){
+    #taishanfacilities li.col-lg-6:nth-of-type(even) img{
+           order-1
+    }
+    【※ 在li中，nth-of-type(偶數)中的img，因col-lg-6的設定，在遇到lg時會變成order-1】
+}
+*/
+
+
+header .navbar .nav-link {
+    transition: 0.5s ease;
+}
+
+/*transfotation*/
+#taishantr>iframe{
+
+filter: grayscale(0.7) brightness(0.5);
+}
