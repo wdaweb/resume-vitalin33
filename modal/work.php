@@ -32,20 +32,12 @@ tr>td{
             <td colspan="2">
                 <input type="hidden" name="table" value="<?=$_GET['table'];?>">
                 <input type="hidden" name="id" value="<?=$_GET['id'];?>">
-                <input type="submit" value="修改" onclick="clo()">
-                <input type="reset" value="重置" >
+                <input type="submit" value="修改">
+                <input type="reset" value="重置">
             </td>
 
         </tr>
     </table>
     </form>
 
-
 </div>
-
-<script>
-    function clo(){
-        $(input[type=submit]).fadeOut();
-    }
-
-</script>

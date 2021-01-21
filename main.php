@@ -8,7 +8,7 @@
         h3{
             margin-top:20px;
             text-align: center;
-            color: white;
+            color: black;
         }
     </style>
 </head>

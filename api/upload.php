@@ -1,6 +1,7 @@
 <?php
 include "../base.php";
 
+print_r($_POST);
 $table=$_POST['table'];
 $db=new DB($table);
 $id=$_POST['id'];

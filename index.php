@@ -18,12 +18,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <!-- <script src="css/src/sweetalert.js"></script>   -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="js.js"></script>
     <script src="slick-1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="slick-1.8.1/slick/slick.css">
     <link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="css.css">
-
+    <link rel="stylesheet" href="css/css.css">
+    <script src="js/js.js"></script>
 
     
 </head>
@@ -61,13 +61,13 @@
             <div id="personal_bg" class="d-flex flex-column align-items-center justify-content-center">
                 <!-- <div class="bg_op d-flex"></div> -->
                 <?php
-                $rows=$Photo->all();
+                $rows=$Photo->all(['sh'=>1]);
                 foreach($rows as $row){
                 ?>
                 <img src="img/<?=$row['img'];?>" class="img-fluid  animate__jackInTheBox animate__animated animate__repeat-1" width="200px" id="personal_ph" >
                 <?php
                 }
-                $rows=$Contact->all();
+                $rows=$Contact->all(['sh'=>1]);
                 foreach($rows as $row){
                ?>
                 <p id="name1"><?=$row['name'];?></p>
@@ -97,7 +97,7 @@
                 <span >Education</span>
 
                 <?php
-                $rows=$Education->all();
+                $rows=$Education->all(['sh'=>1]);
                 foreach($rows as $row){
                ?>
                 <div class="small_box  mx-auto" >
@@ -118,7 +118,7 @@
                 <span >Employment</span>
 
                 <?php
-                $rows=$Work->all();
+                $rows=$Work->all(['sh'=>1]);
                 foreach($rows as $row){
                ?>
                 <div class="small_box2 mx-auto" style="background-color: rgb(208 255 224);">
@@ -145,11 +145,11 @@
             <div  class="d-flex justify-content-center align-items-center my-2">
             <div class="row text-center" >
             <?php
-                $rows=$Trait->all();
+                $rows=$Trait->all(['sh'=>1]);
                 foreach($rows as $row){
                ?>
         <figure class="figure col  m-1 p-0 w-100"  >
-            <img src="<?=$row['tbox_link'];?>" class="figure-img img-fluid rounded"  >
+            <img src="<?=$row['img'];?>" class="figure-img img-fluid rounded"  >
             <div class="intro_1 mx-auto" >
                 <p class="w-100 text-nowrap" ><?=$row['tbox_descri'];?></p>
             </div>
@@ -161,6 +161,8 @@
         </div>
 
 
+        
+
         <div class="container mt-5 d-flex justify-content-center align-items-center">
             <ul class="list-unstyled ">
             <?php
@@ -168,7 +170,7 @@
                 foreach($rows as $row){
                ?>
                 <li class="media my-2">
-                  <img src="<?=$row['tbox_link'];?>" class="mr-3" width="100px" >
+                  <img src="<?=$row['img'];?>" class="mr-3" width="100px" >
                   <div class="media-body">
                     <h5 class="mt-0 mb-1"><?=$row['tbox_descri'];?></h5>
                     <p><?=$row['tbox_intro'];?></p>
@@ -181,6 +183,70 @@
         </div>
       </div>
     </div>
+
+    <div class="container-fluid mt-5" id="trait_top">
+            <h4 class="col-12 col-md-3 main_title" >Autobiography</h4>
+            <div class="container">
+            <div  class="d-flex justify-content-center align-items-center my-2">
+            <div class="row text-left" >
+            <?php
+                $rows=$Ay->all(['sh'=>1]);
+                foreach($rows as $row){
+               ?>
+                      <p ><?=$row['text'];?></p>
+          <?php
+                }
+               ?>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div class="container-fluid trait_bg" id="trait_top">
+            <h4 class="col-12 col-md-3 main_title" >Job Description</h4>
+            <div class="container">
+            <div class="d-flex justify-content-center align-items-center my-2" >
+              <div class="row text-left"  >
+              <div style="display:none;"><i class="fab fa-android"></i></div>
+            <div class="job_des d-flex">
+              <table>
+            <?php
+                $rows=$Job_requ->all(['sh'=>1]);
+                foreach($rows as $row){
+               ?>
+
+                  <tr>
+                    <td class="jt">Title</td>
+                    <td class="jt"><?=$row['title'];?></td>
+                  </tr>
+                  <tr>
+                    <td class="jt">Type</td>
+                    <td class="jt"><?=$row['type'];?></td>
+                  </tr>
+                  <tr>
+                    <td class="jt">Location</td>
+                    <td class="jt"><?=$row['location'];?></td>
+                  </tr>
+                  <tr>
+                    <td class="jt">Sector</td>
+                    <td class="jt"><?=$row['sector'];?></td>
+                  </tr>
+                  <tr>
+                    <td class="jt">Salary</td>
+                    <td class="jt"><?=$row['salary'];?></td>
+                  </tr>
+                      </table>
+                  </div>
+          <?php
+                }
+               ?>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
 
         <div class="container mt-4 text-center" id="skill_top">
           <h4 class="col-12 col-md-3 main_title" >SKILLS</h4>
@@ -263,7 +329,7 @@
         <div class="text-center d-flex justify-content-center align-items-center f_slick">
 
         <?php
-            $rows=$Portfolio->all();
+            $rows=$Portfolio->all(['sh'=>1]);
             // print_r($rows);
             foreach($rows as $row){
           ?> 

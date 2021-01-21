@@ -1,8 +1,15 @@
 <style>
     .modal_box{
-
-        padding: 20px;
+        margin:10px auto;
+        width: 500px;
+        height: 300px;
+        background-color: #f9fffd;
+        padding: 10px 0 0 0;
         text-align: center;
+        border-radius:20px;
+        color:black;
+        border:2px solid black;
+
     }
 
     td>span{
@@ -14,30 +21,56 @@
         margin-bottom: 20px;
     }
 
+    .insertZone{
+        position: fixed;
+        background-color: rgba(0, 0, 139, 0.37);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    
+    .insertZone>form{
+        width: 50%;
+        text-align: center;
+    
+    }
 
 </style>
 <div class="modal_box">
 
-<h3 style="text-align: center;">新增技能圖片</h3>
+<div class="mx-auto mt-5">
 
+<h3 style="color:#c21b1b;">新增技能</h3>
 
-<form action="./api/add.php" method="post" enctype="multipart/form-data">
-<table style="margin: 0 auto">
-    <tr>
-        <td><span>技能圖片</span></td>
+<form action="./api/add.php" method="post">
+<table class="mx-auto">
+            <tr>
+                <td width="30%">技能類别</td>
+                <td ><input type="text" name="skill_type" style="width:95%"></td>  
+            </tr>
+            <tr>
+                 <td width="30%">技能名稱</td>
+                 <td><input type="text" name="skill_name" style="width:95%"></td>
+            </tr>
+            <tr>
+                <td width="30%">盒號</td>
+                <td ><input type="text" name="box_num" style="width:95%"></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="height:80px" >
+                    <input type="hidden" name="table" value="skill">
+                    <input type="submit" value="新增">
+                    <input type="reset" value="重置">
+                </td>
 
-    </tr>
-    <tr>
-        <td><input type="file" name="img" id=""></td>
-    </tr>
-
+            </tr>
 </table>
-
-    <div style="margin-top:20px">
-        <input type="hidden" name="table" value="<?=$_GET['table'];?>">
-            <input type="submit" value="新增">
-            <input type="reset" value="重置">
-            </div>
-
 </form>
 </div>
+</div>
+

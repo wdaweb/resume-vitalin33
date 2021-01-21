@@ -1,14 +1,13 @@
 <?php
 include_once "../base.php";
-
+// print_r($_POST);
 $table=$_POST['table'];   //把POST代入
 $db=new DB($table);
 
-$data=[];  //建立一個空的陣列
-if(!empty($_FILES['img']['tmp_name'])){  //先判斷有沒有上傳檔案這件事，沒有就不用執行
+$data=[];  
+if(!empty($_FILES['img']['tmp_name'])){  
     move_uploaded_file($_FILES['img']['tmp_name'],'../img/'.$_FILES['img']['name']);
-    $data['img']=$_FILES['img']['name'];   //要確認img這個欄位可以是空值，像動態文字廣告沒有圖片，可以考慮把DB內資料表的img欄位拿掉
-    echo "上傳成功";
+    $data['img']=$_FILES['img']['name'];  
 }
 
 if(!empty($_POST['text'])){    //判斷有沒有內容這件事，沒有就不用執行
@@ -19,12 +18,15 @@ if(!empty($_POST['text'])){    //判斷有沒有內容這件事，沒有就不�
 
     switch($table){ 
 
-        case "admin":   //試題規定：一定要新增一筆管理者帳號：admin 、管理者密碼：1234
+        case "admin": 
+            if($_POST['pwd'] == $_POST['pwd2']) {
             $data['acc']=$_POST['acc'];
             $data['pwd']=$_POST['pwd'];
+        }
+
         break;
 
-        case "personal_data":   
+        case "education":   
             $data['school_name']=$_POST['school_name'];
             $data['period']=$_POST['period'];
             $data['dep']=$_POST['dep'];
@@ -33,7 +35,7 @@ if(!empty($_POST['text'])){    //判斷有沒有內容這件事，沒有就不�
             $data['sh']=1;
         break;
         
-        case "education":   
+        case "contact":   
             $data['name']=$_POST['name'];
             $data['title']=$_POST['title'];
             $data['email']=$_POST['email'];
@@ -48,7 +50,7 @@ if(!empty($_POST['text'])){    //判斷有沒有內容這件事，沒有就不�
             $data['sh']=1;
         break;    
 
-        case "personal_photo":   
+        case "photo":   
             $data['sh']=1;
         break; 
 
@@ -67,13 +69,13 @@ if(!empty($_POST['text'])){    //判斷有沒有內容這件事，沒有就不�
         break; 
 
         case "trait":   
-            $data['tbox_link']=$_POST['tbox_link'];
+        
             $data['tbox_descri']=$_POST['tbox_descri'];
             $data['tbox_intro']=$_POST['tbox_intro'];
             $data['sh']=1;
         break; 
 
-        case "work":   
+        case "work":  
             $data['company']=$_POST['company'];
             $data['startYear']=$_POST['startYear'];
             $data['startMonth']=$_POST['startMonth'];
@@ -84,11 +86,20 @@ if(!empty($_POST['text'])){    //判斷有沒有內容這件事，沒有就不�
             $data['sh']=1;
         break; 
 
+        case "job_requ":  
+            $data['title']=$_POST['title'];
+            $data['type']=$_POST['type'];
+            $data['location']=$_POST['location'];
+            $data['sector']=$_POST['sector'];
+            $data['salary']=$_POST['salary'];
+            $data['sh']=0;
+        break; 
+
     }
 
 
 $db->save($data);
 
-// to("../backend.php?do=$table");
+to("../backend.php?do={$_POST['table']}");
 
 ?>

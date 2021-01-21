@@ -1,4 +1,48 @@
+<style>
+    .modal_box{
+        margin:10px auto;
+        width: 500px;
+        height: 300px;
+        background-color: #f9fffd;
+        padding: 50px 0 0 0;
+        text-align: center;
+        border-radius:20px;
+        color:black;
+        border:2px solid black;
 
+    }
+
+    td>span{
+
+        background: #f0f194d4;
+        border-radius: 20px;
+        display: block;
+        padding: 5px;
+        margin-bottom: 20px;
+    }
+
+    .insertZone{
+        position: fixed;
+        background-color: rgba(0, 0, 139, 0.37);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    
+    .insertZone>form{
+        width: 50%;
+        text-align: center;
+    
+    }
+
+</style>
+
+<div class="insertZone" style="display:none;"></div>
 <div style="width:99%; height:87%; margin:auto; overflow:auto; ">
     <p class="t cent botli"><?=$tstr[$do];?></p>
     <form method="post" action="./api/edit.php">
@@ -76,14 +120,14 @@
                 <tr>
                     <input type="hidden" name="table" value="<?=$do;?>">
                     <td width="200px">
-                     <input type="button"
-                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php?table=<?=$do;?>&#39;)"
-                            value="<?=$addstr[$do];?>"></td>
-                    <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置">
+                    <td class="cent"> <input type="button" value="新增作品集" onclick="op('.modal_box','.insertZone','./modal/portfolio.php?table=<?=$do;?>&id=<?=$row['id'];?>')">　<input type="submit" value="修改確定">　<input type="reset" value="重置">
                     </td>
                 </tr>
             </tbody>
         </table>
 
     </form>
+
+
+
 </div>

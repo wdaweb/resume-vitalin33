@@ -1,19 +1,21 @@
 <?php
 date_default_timezone_set("Asia/Taipei");
 session_start();
-$tstr=[
-    'photo'=>"修改大頭貼",
-    'skill'=>"技能盒管理",
-    'trait'=>"個人特質",
-    'portfolio'=>"作品集管理",
-    'contact'=>"個人資料管理",
-    'footer'=>"頁尾版權文字管理",
-    'news'=>"最新管理",
-    'admin'=>"帳號密碼管理",
-    'menu'=>"選單管理",
-    'work'=>"工作經歷管理",
-    'education'=>"學歷管理",
-];
+// $tstr=[
+//     'photo'=>"修改大頭貼",
+//     'skill'=>"技能盒管理",
+//     'trait'=>"個人特質",
+//     'portfolio'=>"作品集管理",
+//     'contact'=>"個人資料管理",
+//     'footer'=>"頁尾版權文字管理",
+//     'news'=>"最新管理",
+//     'admin'=>"帳號密碼管理",
+//     'menu'=>"選單管理",
+//     'work'=>"工作經歷管理",
+//     'education'=>"學歷管理",
+//     'ay'=>"自傳管理",
+//     'job_requ'=>"求職條件",
+// ];
 $addstr=[
     'photo'=>"首次上傳",
     'skill'=>"新增技能圖片",
@@ -26,12 +28,15 @@ $addstr=[
     'menu'=>"新增選單",
     'work'=>"新增工作經歷",
     'education'=>"新增學歷",
+    'ay'=>"新增自傳",
+    'job'=>"新增求職條件",
 ];
 
 $uploadimg=[
-    'portfolio'=>['更新作品圖片','作品圖片'],
+    'portfolio'=>['新增作品集','作品圖片'],
     'trait'=>['更換意象圖片','確認'],
     'photo'=>['更新頭象','網站標題圖片'],
+
 
 ];
 
@@ -110,7 +115,7 @@ class DB{
             $sql .= " where `id`='$id'";
         }
         
-
+    
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
     function del($id){
@@ -154,21 +159,23 @@ class DB{
 }
 
 function to($url){
-    header("location:".$url);
+        header("location:".$url);
 }
 
 
-$Photo=new DB("personal_photo");
+$Photo=new DB("photo");
 $Skill=new DB("skill");
 $Footer=new DB("footer");
 $Trait=new DB("trait");
 $Education=new DB("education");
-$Contact=new DB("personal_data");
+$Contact=new DB("contact");
 $Bottom=new DB("bottom");
 $Work=new DB("work");
 $Admin=new DB("admin");
 $Menu=new DB("menu");
 $Portfolio=new DB("portfolio");
+$Ay=new DB("ay");
+$Job_requ=new DB("job_requ");
 
 
 // if(empty($_SESSION['total'])){

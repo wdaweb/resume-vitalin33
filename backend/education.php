@@ -25,7 +25,7 @@
                 ?>
                 <tr>
                     <td ><input type="text" name="school_name[]" value="<?=$row['school_name'];?>" style="width:95%"></td>
-                    <td ><input type="text" name="school_logo[]" value="<?=$row['school_logo'];?>" style="width:95%"></td>
+                    <td ><input type="text" name="img[]" value="<?=$row['img'];?>" style="width:95%"></td>
                     <td ><input type="text" name="period[]" value="<?=$row['period'];?>" style="width:95%"></td>
                     <td ><input type="text" name="dep[]" value="<?=$row['dep'];?>" style="width:95%"></td>
                     <td ><input type="text" name="degree[]" value="<?=$row['degree'];?>" style="width:95%"></td>
@@ -46,9 +46,6 @@
                 <tr>
                     <input type="hidden" name="table" value="<?=$do;?>">
                     <td width="200px">
-                     <input type="button"
-                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php?table=<?=$do;?>&#39;)"
-                            value="<?=$addstr[$do];?>"></td>
                     <td class="cent"><input type="submit" value="修改確定"> <input type="reset" value="重置">
                     </td>
                 </tr>
@@ -56,4 +53,40 @@
         </table>
 
     </form>
+
+    <div class="mx-auto mt-5">
+
+<h3 style="color:#c21b1b;">新增學歷</h3>
+
+<form action="./api/add.php" method="post">
+<table class="mx-auto">
+<tr>
+                    <td width="10%">校名</td>
+                    <td width="15%">校徽</td>
+                    <td width="15%">就讀期間</td>
+                    <td width="15%">系別</td>
+                    <td width="10%">學位</td>
+                    <td width="10%">狀態</td>
+                    <td width="5%">其它</td>
+</tr>
+<tr>
+        <td ><input type="text" name="school_name"  style="width:95%"></td>
+        <td ><input type="file" name="img"  style="width:95%"></td>
+        <td ><input type="text" name="period" style="width:95%"></td>
+        <td ><input type="text" name="dep" style="width:95%"></td>
+        <td ><input type="text" name="degree" style="width:95%"></td>
+        <td ><input type="text" name="status"  style="width:95%"></td>
+        <td ><input type="text" name="photo_1"  style="width:95%"></td>
+</tr>
+    <td colspan="7" style="height:80px" >
+        <input type="hidden" name="table" value="<?=$do;?>">
+        <input type="submit" value="新增">
+        <input type="reset" value="重置">
+    </td>
+
+</tr>
+</table>
+</form>
+</div>
+
 </div>
