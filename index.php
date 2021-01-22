@@ -101,7 +101,7 @@
                 foreach($rows as $row){
                ?>
                 <div class="small_box  mx-auto" >
-                <img src="img/<?=$row['school_logo'];?>" width="260px"><br>
+                <img src="img/<?=$row['img'];?>" width="260px"><br>
                 <span style="font-size: 1.1rem;"><?=$row['period'];?></span><br>
               
                 <img src="img/<?=$row['photo_1'];?>" width="80px" style="margin: 20px 0 10px  0;"><br>

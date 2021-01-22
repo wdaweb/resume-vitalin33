@@ -40,7 +40,7 @@ tr>td{
         </tr>
         <tr>
             <td>作品介紹：</td>
-            <td><input type="text" name="link" id=""></td>
+            <td><input type="text" name="text" id=""></td>
         </tr>
         <tr>
             <td colspan="2" style="height:80px;text-align:center;">

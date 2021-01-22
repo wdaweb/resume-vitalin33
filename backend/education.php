@@ -12,7 +12,6 @@
                     <td width="15%">系別</td>
                     <td width="10%">學位</td>
                     <td width="10%">狀態</td>
-                    <td width="5%">其它</td>
                     <td width="5%">顯示</td>
                     <td width="5%">刪除</td>
 
@@ -30,7 +29,6 @@
                     <td ><input type="text" name="dep[]" value="<?=$row['dep'];?>" style="width:95%"></td>
                     <td ><input type="text" name="degree[]" value="<?=$row['degree'];?>" style="width:95%"></td>
                     <td ><input type="text" name="status[]" value="<?=$row['status'];?>" style="width:95%"></td>
-                    <td ><input type="text" name="photo_1[]" value="<?=$row['photo_1'];?>" style="width:95%"></td>
                     <td><input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>></td>
                     <td ><input type="checkbox" name="del[]" value="<?=$row['id'];?>"></td>
                     <input type="hidden" name="id[]" value="<?=$row['id'];?>">
@@ -58,7 +56,7 @@
 
 <h3 style="color:#c21b1b;">新增學歷</h3>
 
-<form action="./api/add.php" method="post">
+<form action="./api/add.php" method="post" enctype="multipart/form-data">
 <table class="mx-auto">
 <tr>
                     <td width="10%">校名</td>
@@ -67,7 +65,7 @@
                     <td width="15%">系別</td>
                     <td width="10%">學位</td>
                     <td width="10%">狀態</td>
-                    <td width="5%">其它</td>
+       
 </tr>
 <tr>
         <td ><input type="text" name="school_name"  style="width:95%"></td>
@@ -76,7 +74,7 @@
         <td ><input type="text" name="dep" style="width:95%"></td>
         <td ><input type="text" name="degree" style="width:95%"></td>
         <td ><input type="text" name="status"  style="width:95%"></td>
-        <td ><input type="text" name="photo_1"  style="width:95%"></td>
+
 </tr>
     <td colspan="7" style="height:80px" >
         <input type="hidden" name="table" value="<?=$do;?>">
