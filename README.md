@@ -3,7 +3,7 @@
 ### CakeResume:
   * URL:https://www.cakeresume.com/s--PcFeVHLbLvNPXa4e-73ezg--/vita-lin-51ebcd
 ### 專屬線上空間
-  * URL:http://220.128.133.15/s1090414/
+  * URL:http://220.128.133.15/s1090414/10904/showme/
 
 ---
 ## 功能要求
