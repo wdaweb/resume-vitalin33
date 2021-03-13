@@ -47,12 +47,11 @@ $uploadimg=[
 class DB{
 
     protected $table;
-    protected $dsn="mysql:host=localhost;dbname=s1090414;charset=utf8";
-    protected $pdo;
+     protected $pdo;
 
     function __construct($table){
         $this->table=$table;
-        $this->pdo=new PDO($this->dsn,'s1090414','s1090414');
+       
 
     }
 
