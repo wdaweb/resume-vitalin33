@@ -162,19 +162,7 @@ function to($url){
 }
 
 
-$Photo=new DB("photo");
-$Skill=new DB("skill");
-$Footer=new DB("footer");
-$Trait=new DB("trait");
-$Education=new DB("education");
-$Contact=new DB("contact");
-$Bottom=new DB("bottom");
-$Work=new DB("work");
-$Admin=new DB("admin");
-$Menu=new DB("menu");
-$Portfolio=new DB("portfolio");
-$Ay=new DB("ay");
-$Job_requ=new DB("job_requ");
+
 
 
 // if(empty($_SESSION['total'])){
